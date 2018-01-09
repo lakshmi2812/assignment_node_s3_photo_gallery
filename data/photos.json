@@ -14,5 +14,13 @@
   "cat-482dc75c73e7d36c64c3bd63ea52eb10.jpeg": {
     "url": "https://testapp81463148661155.s3.amazonaws.com/cat-482dc75c73e7d36c64c3bd63ea52eb10.jpeg",
     "name": "cat-482dc75c73e7d36c64c3bd63ea52eb10.jpeg"
+  },
+  "puppy-5a1f7659ff5d9b10a0c815ba9c8df248.jpeg": {
+    "url": "https://s3.us-west-1.amazonaws.com/lakshmi.media/puppy-5a1f7659ff5d9b10a0c815ba9c8df248.jpeg",
+    "name": "puppy-5a1f7659ff5d9b10a0c815ba9c8df248.jpeg"
+  },
+  "puppies-110ff6700085e2e76fcf7ad88e0f456c.jpeg": {
+    "url": "https://s3.us-west-1.amazonaws.com/lakshmi.media/puppies-110ff6700085e2e76fcf7ad88e0f456c.jpeg",
+    "name": "puppies-110ff6700085e2e76fcf7ad88e0f456c.jpeg"
   }
 }

@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const FileUpload = require("./services/file_upload");
+const User = require("./models/User");
 
 // ----------------------------------------
 // App Variables
@@ -38,6 +39,26 @@ app.use(
 app.use((req, res, next) => {
   res.locals.session = req.session;
   next();
+});
+
+// ----------------------------------------
+//middleware to connect to MongoDB via mongoose in your `app.js`
+// ----------------------------------------
+const mongoose = require("mongoose");
+//mongoose.connect("mongodb://localhost/assignment_ponz_scheme");
+app.use((req, res, next) => {
+  if (mongoose.connection.readyState) {
+    next();
+  } else {
+    require("./mongo")().then(() => next());
+  }
+});
+app.use((req, res, next) => {
+  if (mongoose.connection.readyState) {
+    next();
+  } else {
+    require("./mongo")().then(() => next());
+  }
 });
 
 // ----------------------------------------
