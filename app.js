@@ -90,10 +90,26 @@ const mw = FileUpload.single("photo[file]");
 // HOME ROUTE
 
 app.get("/", (req, res) => {
-  res.render("welcome/index");
+  const photos = require("./data/photos");
+  res.render("welcome/index", { photos });
 });
 
 // UPLOAD ROUTE
+app.post("/photos", mw, (req, res, next) => {
+  console.log("Files", req.file);
+
+  FileUpload.upload({
+    data: req.file.buffer,
+    name: req.file.originalname,
+    mimetype: req.file.mimetype
+  })
+    .then(data => {
+      console.log(data);
+      req.flash("success", "Photo created!");
+      res.redirect("/");
+    })
+    .catch(next);
+});
 
 // ----------------------------------------
 // Template Engine

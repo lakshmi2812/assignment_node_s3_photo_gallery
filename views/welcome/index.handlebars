@@ -17,3 +17,28 @@
 
 
 <!-- photo gallery -->
+
+
+
+<header class="page-header">
+  <h1>Photos Index</h1>
+</header>
+
+
+{{#if (isEmpty photos) }}
+  <p class="text-danger">No Photos :(</p>
+{{else }}
+  <div class="row">
+    {{#each photos as |photo| }}
+      <div class="col-xs-4">
+        <a
+          href="/photos/{{ photo.name }}?_method=delete"
+          class="text-danger">
+          &times;
+        </a>
+        <p>{{ photo.name }}</p>
+        <img src="{{ photo.url }}" alt="Photo" class="img-responsive">
+      </div>
+    {{/each }}
+  </div>
+{{/if }}
